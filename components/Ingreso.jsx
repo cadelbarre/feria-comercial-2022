@@ -35,14 +35,13 @@ export default function Ingreso () {
     }
 
     const response = await fetch(`/api/clientes/${value}`)
-    const json = await response.json()
+    const [json] = await response.json()
 
-    const { contacto, ciudad, direccion, celular, telefono } = json[0]
-    setValue('contacto', contacto)
-    setValue('direccion', direccion)
-    setValue('ciudad', ciudad)
-    setValue('celular', celular)
-    setValue('telefono', telefono)
+    setValue('contacto', json?.contacto)
+    setValue('direccion', json?.direccion)
+    setValue('ciudad', json?.ciudad)
+    setValue('celular', json?.celular)
+    setValue('telefono', json?.telefono)
 
     setIsLoading(prev => !prev)
   }
@@ -124,7 +123,7 @@ export default function Ingreso () {
             <input
               className='input' type='number'
               defaultValue={1}
-              {...register('bonoTransporte', { required: true, min: 1, max: 10 })}
+              {...register('bonoTransporte', { required: true, min: 0, max: 10 })}
               disabled={isLoading && 'disabled'}
             />
           </div>
@@ -135,7 +134,7 @@ export default function Ingreso () {
               className='input' type='number'
               min={1} max={10}
               defaultValue={1}
-              {...register('bonoAlmuerzo', { required: true, min: 1, max: 10 })}
+              {...register('bonoAlmuerzo', { required: true, min: 0, max: 10 })}
               disabled={isLoading && 'disabled'}
             />
           </div>
@@ -145,7 +144,7 @@ export default function Ingreso () {
             <input
               className='input' type='number'
               defaultValue={1}
-              {...register('bonoRefrigerio', { required: true, min: 1, max: 10 })}
+              {...register('bonoRefrigerio', { required: true, min: 0, max: 10 })}
               disabled={isLoading && 'disabled'}
             />
           </div>
