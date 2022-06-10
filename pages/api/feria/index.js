@@ -8,8 +8,10 @@ export default async function handle (req, res) {
         bonoAlmuerzo: true,
         bonoRefrigerio: true,
         bonoTransporte: true,
-        creado: true
-      }
+        creado: true,
+        id: true
+      },
+      orderBy: [{ id: 'desc' }]
     })
     res.json(data)
   } catch (error) {
