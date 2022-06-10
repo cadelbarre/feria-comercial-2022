@@ -5,7 +5,7 @@ import TablaClientes from '../components/TablaClientes.jsx'
 
 export default function Home () {
   return (
-    <div className='px-8 max-w-4xl m-auto py-8'>
+    <div className='p-4 sm:p-8 max-w-4xl m-auto'>
       <Head>
         <title>Feria Comercial 2022</title>
         <meta name='description' content='Ingreso Clientes en la Feria Comercial' />

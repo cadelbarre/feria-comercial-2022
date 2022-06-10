@@ -66,9 +66,9 @@ export default function Ingreso () {
       {isLoading && <p className='text-center'>Cargando... 🚀</p>}
 
       <form onSubmit={handleSubmit(onSubmit)} autoComplete='off'>
-        <div className='flex gap-4'>
+        <div className='flex flex-col sm:flex-row gap-4'>
 
-          <div className='flex flex-col w-3/5'>
+          <div className='flex flex-col sm:w-3/5'>
             <label htmlFor='drogueria'>Nombre Drogueria</label>
             <input
               className='input' type='text'
@@ -88,31 +88,31 @@ export default function Ingreso () {
             </datalist>
           </div>
 
-          <div className='flex flex-col w-2/5'>
+          <div className='flex flex-col sm:w-2/5'>
             <label htmlFor='contacto'>Nombre Cliente</label>
             <input className='input' type='text' {...register('contacto', { required: true })} disabled={isLoading && 'disabled'} />
           </div>
         </div>
 
-        <div className='flex flex-row gap-4 min-w-full'>
-          <div className='flex flex-col w-1/2'>
+        <div className='flex flex-col sm:flex-row gap-4 min-w-full'>
+          <div className='flex flex-col sm:w-1/2'>
             <label htmlFor='direccion'>Direccion</label>
             <input className='input' type='text' {...register('direccion', { required: true })} disabled={isLoading && 'disabled'} />
           </div>
 
-          <div className='flex flex-col w-1/2'>
+          <div className='flex flex-col sm:w-1/2'>
             <label htmlFor='ciudad'>Ciudad</label>
             <input className='input' type='text' {...register('ciudad', { required: true })} disabled={isLoading && 'disabled'} />
           </div>
         </div>
 
-        <div className='flex flex-row gap-4 min-w-full'>
-          <div className='flex flex-col w-1/2'>
+        <div className='flex flex-col sm:flex-row gap-4 min-w-full'>
+          <div className='flex flex-col sm:w-1/2'>
             <label htmlFor='celular'>Celular</label>
             <input className='input' type='text' {...register('celular')} disabled={isLoading && 'disabled'} />
           </div>
 
-          <div className='flex flex-col w-1/2'>
+          <div className='flex flex-col sm:w-1/2'>
             <label htmlFor='telefono'>Telefono</label>
             <input className='input' type='text' {...register('telefono')} disabled={isLoading && 'disabled'} />
           </div>

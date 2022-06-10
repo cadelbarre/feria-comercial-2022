@@ -18,13 +18,13 @@ export default function Bonos () {
   return (
     <div className='card'>
       <h1 className='text-2xl text-center mb-6 font-semibold tracking-tight'>Control de Ingreso y Bonos</h1>
-      <div className='flex flex-row justify-between items-center'>
+      <div className='flex flex-col sm:flex-row justify-between items-center'>
         {
          body.map(({ title, value, icon }) => {
            return (
              <div key={title} className='flex flex-col items-center mb-3'>
                <p className='text-3xl'>{value}</p>
-               <h2 className='text-base font-semibold text-slate-800'>{icon} {title}</h2>
+               <h2 className='text-base font-semibold text-slate-800 text-center'>{icon} {title}</h2>
              </div>
            )
          })
