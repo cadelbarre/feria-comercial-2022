@@ -132,7 +132,6 @@ export default function Ingreso () {
             <label htmlFor='bonoAlmuerzo'>Bono Almuerzo</label>
             <input
               className='input' type='number'
-              min={1} max={10}
               defaultValue={1}
               {...register('bonoAlmuerzo', { required: true, min: 0, max: 10 })}
               disabled={isLoading && 'disabled'}
