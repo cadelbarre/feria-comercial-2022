@@ -6,8 +6,8 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 export default function TablaClientes () {
   const { data, error } = useSWR('/api/feria', fetcher, { refreshInterval: 120000 })
 
-  if (error) return <div className='card mt-4'>failed to load ... 🙄</div>
-  if (!data) return <div className='card mt-4'>loading... ⏳</div>
+  if (error) return <div className='card'>failed to load ... 🙄</div>
+  if (!data) return <div className='card'>loading... ⏳</div>
 
   const formatTime = (time) => {
     return new Intl.DateTimeFormat('en', {
